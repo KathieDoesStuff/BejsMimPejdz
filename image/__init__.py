@@ -13,6 +13,8 @@ def convert_to_jpg(image_filename: str):
     os.remove(image_filename)
 
     image_filename = image_filename.replace(file_extension, "jpg")
-
-    cv2.imwrite(image_filename, img)
+    try:
+        cv2.imwrite(image_filename, img)
+    except:
+        return
     return image_filename

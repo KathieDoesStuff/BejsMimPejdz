@@ -49,12 +49,15 @@ def get_post_data(posts: list):
 
 
 def download_images(posts: list[RedditPost]):
-
     if not os.path.exists("./imgs/"):
         os.makedirs("./imgs/")
 
     for i, post in enumerate(posts):
         file_extension = post.url.split(".")[-1]
+
+        if file_extension not in ["png", "jpg", "jpeg"]:
+            continue
+
         filename = f"./imgs/{i}.{file_extension}"
 
         urllib.request.urlretrieve(post.url, filename)
