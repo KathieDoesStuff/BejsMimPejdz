@@ -6,7 +6,7 @@ from random import randint
 import requests
 
 import image
-from api.googleTranlate import translate_to_croatian
+from api.googleTranslate import translate_to_croatian
 from api.reddit.redditPost import RedditPost
 
 people = ["Mama", "Tata", "Baka", "Deda", "Majko", "Mamica", "Tatica", "Dedica", "Bakica", "Štef", "Jura", "Joža"]
