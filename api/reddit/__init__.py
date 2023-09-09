@@ -30,9 +30,14 @@ def get_top_posts(subreddit: str):
 def get_post_data(posts: list):
     post_data = []
     for post in posts:
+
+        if "url_overridden_by_dest" not in post["data"]:
+            continue
+
         url = post["data"]["url_overridden_by_dest"]
         title = post["data"]["title"]
 
+        # remove 196-esque typing
         pattern = re.compile("rule", re.IGNORECASE)
         title = pattern.sub("", title)
         title = title.replace("()", "")
