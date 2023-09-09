@@ -44,7 +44,7 @@ def get_post_data(posts: list):
 
         if title == "":
             person = people[randint(0, len(people) - 1)]
-            title = f"{person}, pogledaj ovaj bejsd mim!"
+            title = f"{person}, pogledaj ovu bejsd objavu!"
         else:
             title = translate_to_croatian(title)
 
