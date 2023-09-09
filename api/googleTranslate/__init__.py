@@ -1,5 +1,3 @@
-import random
-
 from googletrans import Translator
 
 translator = Translator()
